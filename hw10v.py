@@ -32,19 +32,19 @@
 def col(num, q=0):
     if q == 0:
         print(num)
-    if int(num) == 1:
+    if num == 1:
         print("Всего получаем", q, "шагов.")
         return
-    if int(num) % 2 == 0:
-        num = int(num) / 2
-        print(str(int(num)))
+    if num % 2 == 0:
+        num = int(num / 2)
+        print(num)
         q += 1
-        col(int(num),q)
+        col(num,q)
     else:
-        num = int(num)*3+1
-        print(str(int(num)))
+        num = num*3+1
+        print(num)
         q += 1
-        col(int(num), q)
+        col(num, q)
 
 x = input("Введите число: ")
-col(x)
+col(int(x))
