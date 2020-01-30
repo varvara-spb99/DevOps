@@ -23,9 +23,7 @@ letters_range('a','a')
 [] """
 
 def letters_range(start, stop, step = 1):
-    lst = []
-    for x in [chr(i) for i in range(ord(start),ord(stop), step)]:
-        lst.append(x)
-    print(lst)
+    lst = [chr(i) for i in range(ord(start),ord(stop), step)]
+    return lst
 
-letters_range('a', 'a')
+print(letters_range('a', 'l'))
