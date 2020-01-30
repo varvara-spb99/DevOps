@@ -18,7 +18,6 @@ If dn represents the n-th digit of the fractional part, find the value of the fo
 
 d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
 185185"""
-#from itertools import repeat
 
 print("Problem 40: ")
 string = ''.join([str(1+a) for a in range(200000)])
