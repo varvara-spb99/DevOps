@@ -17,30 +17,26 @@
 -> 2
 1
 -> 3
-10 #здесь должен получится ответ 5, т.к. из-за рекурсии вызывается ещё и деление 10 на 2 и получается 5.
+10
 -> Два
 Не удалось преобразовать введенный текст в число.
 -> cancel
 Bye!"""
 
-def rek(num):
-    if num % 2 == 0:
-            num = num / 2
-            print(int(num))
-            return
-    else:
-        num = num*3 + 1
-        rek(num)
-
-string = input("Введите текст: ")
-while(string!='cancel'):
-    if string.isdigit():
+def foo():
+    string = input("Введите текст: ")
+    if string.lower() == "cancel":
+        return "Bye!"
+    elif string.isdigit():
         num = int(string)
-        rek(num)
-        string = input("Введите cancel для прекращения работы программы или текст для продолжения: ")
+        if num % 2 == 0:
+            print(int(num/2))
+        else:
+            print(int(num*3 + 1))
     else:
-        string = input("Не удалось преобразовать введенный текст в число.\n"
-                     "Введите cancel для прекращения работы программы или текст для продолжения: ")
-    if string == "cancel":
-        print("Bye!")
+        print("Не удалось преобразовать введенный текст в число.")
+    return foo() # сработает, если string != "cancel"
+
+
+print(foo())
 
