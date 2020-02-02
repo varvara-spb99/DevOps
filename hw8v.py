@@ -25,18 +25,20 @@ Bye!"""
 
 def foo():
     string = input("Введите текст: ")
-    if string.lower() == "cancel":
-        return "Bye!"
-    elif string.isdigit():
+    try:
+        if string.lower() == "cancel":
+            print("Bye!")
+            return
         num = int(string)
+    except:
+        print("Не удалось преобразовать введенный текст в число.")
+        foo()
+    else:
         if num % 2 == 0:
             print(int(num/2))
         else:
             print(int(num*3 + 1))
-    else:
-        print("Не удалось преобразовать введенный текст в число.")
-    return foo() # сработает, если string != "cancel"
+        foo()
 
-
-print(foo())
+foo()
 
