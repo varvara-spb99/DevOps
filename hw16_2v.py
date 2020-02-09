@@ -24,7 +24,6 @@ def navig():
     print(f"Input data: {line.rstrip()}")
     print("Output data:")
     print(f"Location: {location}")
-    query = {'api':1, 'query':[lat, long]}
     print(f"Goggle Maps URL: https://www.google.com/maps/search/?api=1&query={lat},{long}")
 
 if __name__ == '__main__':
